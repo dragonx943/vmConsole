@@ -5,13 +5,13 @@ ARG RSA_KEY_PASSPHRASE pass
 
 COPY /abuild-keys /abuild-keys
 COPY /extras /custom-packages/extras
-
-RUN apk upgrade && \
-    apk add alpine-sdk build-base apk-tools alpine-conf openssl \
-        busybox fakeroot syslinux xorriso squashfs-tools sudo && \
+RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
+RUN apk upgrade
+RUN apk add alpine-sdk build-base apk-tools alpine-conf openssl && \
+    apk add busybox fakeroot syslinux xorriso squashfs-tools sudo && \
     adduser -s /bin/ash -G abuild -D -h /home/build -u ${USER_ID} build && \
     mkdir -p /home/build/.abuild && chown build /home/build/.abuild && \
-    openssl aes-256-cbc -d -in /abuild-keys/vmconsole-dev.rsa.enc \
+    openssl aes-256-cbc -in /abuild-keys/vmconsole-dev.rsa.enc \
         -out /home/build/.abuild/vmconsole-dev.rsa \
         -k "$RSA_KEY_PASSPHRASE" -pbkdf2 && \
     chown build /home/build/.abuild/vmconsole-dev.rsa && \

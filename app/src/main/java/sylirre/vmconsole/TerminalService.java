@@ -64,6 +64,9 @@ public class TerminalService extends Service implements SessionChangedCallback {
     public int SSH_PORT = -1;
     public int HTTP_PORT = -1;
     public int HTTPS_PORT = -1;
+    public int XIAOYA_PORT = -1;
+    public int ALIST_PORT = -1;
+    public int OTHER_PORT = -1;
 
     /**
      * Note that the service may often outlive the activity, so need to clear this reference.

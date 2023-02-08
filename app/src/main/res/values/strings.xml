@@ -21,6 +21,9 @@
     <!-- Context menu: more -->
     <string name="menu_open_ssh">Open SSH (%s)</string>
     <string name="menu_open_http">Open HTTP (%s)</string>
+    <string name="menu_open_xiaoya">Open XIAOYA (%s)</string>
+    <string name="menu_open_alist">Open ALIST (%s)</string>
+    <string name="menu_open_other">Open OTHER (%s)</string>
     <string name="menu_open_https">Open HTTPS (%s)</string>
     <string name="menu_open_fm">Open File Manager</string>
     <string name="menu_autofill_pw">Autofill password</string>

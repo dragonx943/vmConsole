@@ -66,14 +66,17 @@ public final class TerminalActivity extends Activity implements ServiceConnectio
     private static final int CONTEXTMENU_PASTE_ID = 1;
     private static final int CONTEXTMENU_OPEN_SSH = 2;
     private static final int CONTEXTMENU_OPEN_HTTP = 3;
-    private static final int CONTEXTMENU_OPEN_HTTPS = 4;
-    private static final int CONTEXTMENU_OPEN_FM = 5;
-    private static final int CONTEXTMENU_AUTOFILL_PW = 6;
-    private static final int CONTEXTMENU_SELECT_URLS = 7;
-    private static final int CONTEXTMENU_RESET_TERMINAL_ID = 8;
-    private static final int CONTEXTMEMU_SHUTDOWN = 9;
-    private static final int CONTEXTMENU_TOGGLE_IGNORE_BELL = 10;
-    private static final int CONTEXTMENU_TOGGLE_AUTO_SCROLL = 11;
+    private static final int CONTEXTMENU_OPEN_XIAOYA = 4;
+    private static final int CONTEXTMENU_OPEN_ALIST = 5;
+    private static final int CONTEXTMENU_OPEN_OTHER = 6;
+    private static final int CONTEXTMENU_OPEN_HTTPS = 7;
+    private static final int CONTEXTMENU_OPEN_FM = 8;
+    private static final int CONTEXTMENU_AUTOFILL_PW = 9;
+    private static final int CONTEXTMENU_SELECT_URLS = 10;
+    private static final int CONTEXTMENU_RESET_TERMINAL_ID = 11;
+    private static final int CONTEXTMEMU_SHUTDOWN = 12;
+    private static final int CONTEXTMENU_TOGGLE_IGNORE_BELL = 13;
+    private static final int CONTEXTMENU_TOGGLE_AUTO_SCROLL = 14;
 
     private static final int PERMISSION_REQUEST_CODE_NOTIFICATIONS = 1000;
 
@@ -489,6 +492,22 @@ public final class TerminalActivity extends Activity implements ServiceConnectio
             mTermService.HTTP_PORT = httpPort;
             vmnicArgs = vmnicArgs + ",hostfwd=tcp::" + httpPort + "-:80";
         }
+
+        int xiaoyaHttpPort = getFreePort(15678, 15678, 15999);
+        if (xiaoyaHttpPort != -1) {
+            mTermService.XIAOYA_PORT = xiaoyaHttpPort;
+            vmnicArgs = vmnicArgs + ",hostfwd=tcp::" + xiaoyaHttpPort + "-:5678";
+        }
+        int alistHttpPort = getFreePort(15244, 15244, 15677);
+        if (alistHttpPort != -1) {
+            mTermService.ALIST_PORT = alistHttpPort;
+            vmnicArgs = vmnicArgs + ",hostfwd=tcp::" + alistHttpPort + "-:5244";
+        }
+        int otherHttpPort = getFreePort(16000, 16000, 17000);
+        if (otherHttpPort != -1) {
+            mTermService.OTHER_PORT = otherHttpPort;
+            vmnicArgs = vmnicArgs + ",hostfwd=tcp::" + otherHttpPort + "-:6000";
+        }
         int httpsPort = getFreePort(16443, 30000, 34999);
         if (httpsPort != -1) {
             mTermService.HTTPS_PORT = httpsPort;
@@ -547,6 +566,15 @@ public final class TerminalActivity extends Activity implements ServiceConnectio
             if (mTermService.HTTP_PORT != -1) {
                 menu.add(Menu.NONE, CONTEXTMENU_OPEN_HTTP, Menu.NONE, getResources().getString(R.string.menu_open_http, "0.0.0.0:" + mTermService.HTTP_PORT));
             }
+            if (mTermService.XIAOYA_PORT != -1) {
+                menu.add(Menu.NONE, CONTEXTMENU_OPEN_XIAOYA, Menu.NONE, getResources().getString(R.string.menu_open_xiaoya, "0.0.0.0:" + mTermService.XIAOYA_PORT));
+            }
+            if (mTermService.ALIST_PORT != -1) {
+                menu.add(Menu.NONE, CONTEXTMENU_OPEN_ALIST, Menu.NONE, getResources().getString(R.string.menu_open_alist, "0.0.0.0:" + mTermService.ALIST_PORT));
+            }
+            if (mTermService.OTHER_PORT != -1) {
+                menu.add(Menu.NONE, CONTEXTMENU_OPEN_OTHER, Menu.NONE, getResources().getString(R.string.menu_open_other, "0.0.0.0:" + mTermService.OTHER_PORT));
+            }
 
             if (mTermService.HTTPS_PORT != -1) {
                 menu.add(Menu.NONE, CONTEXTMENU_OPEN_HTTPS, Menu.NONE, getResources().getString(R.string.menu_open_https, "0.0.0.0:" + mTermService.HTTPS_PORT));
@@ -570,6 +598,7 @@ public final class TerminalActivity extends Activity implements ServiceConnectio
 
     @Override
     public boolean onContextItemSelected(MenuItem item) {
+        int httpPort = -1;
         switch (item.getItemId()) {
             case CONTEXTMENU_PASTE_ID:
                 doPaste();
@@ -614,10 +643,20 @@ public final class TerminalActivity extends Activity implements ServiceConnectio
                 }
                 return true;
             case CONTEXTMENU_OPEN_HTTP:
-                int httpPort = -1;
-
                 if (mTermService != null) {
                     httpPort = mTermService.HTTP_PORT;
+                }
+            case CONTEXTMENU_OPEN_XIAOYA:
+                if (mTermService != null) {
+                    httpPort = mTermService.XIAOYA_PORT;
+                }
+            case CONTEXTMENU_OPEN_ALIST:
+                if (mTermService != null) {
+                    httpPort = mTermService.ALIST_PORT;
+                }
+            case CONTEXTMENU_OPEN_OTHER:
+                if (mTermService != null) {
+                    httpPort = mTermService.OTHER_PORT;
                 }
 
                 if (httpPort != -1) {
