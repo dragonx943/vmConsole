@@ -11,9 +11,9 @@ RUN apk add alpine-sdk build-base apk-tools alpine-conf openssl && \
     apk add busybox fakeroot syslinux xorriso squashfs-tools sudo && \
     adduser -s /bin/ash -G abuild -D -h /home/build -u ${USER_ID} build && \
     mkdir -p /home/build/.abuild && chown build /home/build/.abuild && \
-    openssl aes-256-cbc -in /abuild-keys/vmconsole-dev.rsa.enc \
-        -out /home/build/.abuild/vmconsole-dev.rsa \
-        -k "$RSA_KEY_PASSPHRASE" -pbkdf2 && \
+    openssl aes-256-cbc -d -in /abuild-keys/vmconsole-dev.rsa.enc \
+            -out /home/build/.abuild/vmconsole-dev.rsa \
+            -k "$RSA_KEY_PASSPHRASE" -pbkdf2 && \
     chown build /home/build/.abuild/vmconsole-dev.rsa && \
     chmod 600 /home/build/.abuild/vmconsole-dev.rsa && \
     cp /abuild-keys/vmconsole-dev.rsa.pub /home/build/.abuild/vmconsole-dev.rsa.pub && \
