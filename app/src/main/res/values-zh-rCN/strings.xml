@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="application_name">vmConsole</string>
+
+    <!-- Common -->
+    <string name="cancel_label">取消</string>
+    <string name="exit_label">退出</string>
+    <string name="ok_label">OK</string>
+
+    <!-- Installer dialog -->
+    <string name="installer_progress_message">正在初始化…</string>
+    <string name="installer_error_title">初始化失败</string>
+    <string name="installer_error_body">Application was unable to set up runtime resources.</string>
+    <string name="installer_error_try_again_button">请重试</string>
+
+    <!-- Context menu: main -->
+    <string name="menu_copy_text">复制</string>
+    <string name="menu_paste_text">粘贴</string>
+    <string name="menu_more">更多...</string>
+
+    <!-- Context menu: more -->
+    <string name="menu_open_ssh">打开SSH (%s)</string>
+    <string name="menu_open_http">打开HTTP (%s)</string>
+    <string name="menu_open_xiaoya">打开小雅 (%s)</string>
+    <string name="menu_open_alist">打开ALIST (%s)</string>
+    <string name="menu_open_other">打开其它 (%s)</string>
+    <string name="menu_open_https">打开HTTPS (%s)</string>
+    <string name="menu_open_fm">打开文件管理器</string>
+    <string name="menu_autofill_pw">自动填充密码</string>
+    <string name="menu_select_urls">选择URLs</string>
+    <string name="menu_reset_terminal">重置</string>
+    <string name="menu_shutdown">关机</string>
+    <string name="menu_toggle_ignore_bell">Ignore bell character</string>
+    <string name="menu_toggle_scrolling">禁用自动滚动</string>
+
+    <!-- Context menu: Open File Manager -->
+    <string name="toast_open_fm_intent_failure">打开文件管理器失败.</string>
+
+    <!-- Context menu: Open SSH -->
+    <string name="dialog_set_ssh_user_title">Connect as user:</string>
+    <string name="dialog_set_ssh_user_invalid_name">Cannot use the given SSH user name.</string>
+    <string name="toast_open_ssh_intent_failure">Unable to launch SSH client Android application.</string>
+
+    <!-- Context menu: Open Web -->
+    <string name="toast_open_web_intent_failure">Unable to launch web browser Android application.</string>
+
+    <!-- Select URL dialog -->
+    <string name="toast_no_urls_found">No URLs detected.</string>
+    <string name="toast_url_copied">URL has been copied to clipboard.</string>
+    <string name="toast_bad_url">Cannot open this URL!</string>
+    <string name="select_url_dialog_title">Click URL to copy or long press to open:</string>
+
+    <!-- Shut down dialog -->
+    <string name="dialog_shut_down_title">关闭虚拟机</string>
+    <string name="dialog_shut_down_desc">所有未保存的数据都将丢失，是否继续？</string>
+    <string name="dialog_shut_down_yes_btn">是</string>
+
+    <!-- Notification -->
+    <string name="notification_action_wake_lock">请求后台运行</string>
+    <string name="notification_action_wake_unlock">释放后台运行</string>
+    <string name="notification_action_shutdown">关机</string>
+
+    <!-- Misc -->
+    <string name="toast_reset_terminal">Terminal state has been reset.</string>
+    <string name="toast_bell_char_ignored">Bell characters will be ignored.</string>
+    <string name="toast_bell_char_processed">Bell characters will be processed.</string>
+    <string name="toast_terminal_scrolling_disabled">Terminal auto scrolling disabled.</string>
+    <string name="toast_terminal_scrolling_enabled">Terminal auto scrolling enabled.</string>
+    <string name="toast_port_fwd_failed">Cannot use this function because port forwarding failed.</string>
+</resources>
