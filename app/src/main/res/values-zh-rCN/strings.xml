@@ -67,4 +67,8 @@
     <string name="toast_terminal_scrolling_disabled">Terminal auto scrolling disabled.</string>
     <string name="toast_terminal_scrolling_enabled">Terminal auto scrolling enabled.</string>
     <string name="toast_port_fwd_failed">Cannot use this function because port forwarding failed.</string>
+    <string name="qemu_running">QEMU正在运行</string>
+    <string name="qemu_not_init">QEMU未初始化</string>
+    <string name="tap_to_open_app">点击打开程序</string>
+    <string name="wake_lock_held">后台运行已授权</string>
 </resources>

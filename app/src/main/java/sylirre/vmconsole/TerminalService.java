@@ -213,18 +213,18 @@ public class TerminalService extends Service implements SessionChangedCallback {
         notifyIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, notifyIntent, PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
 
-        String contentTitle = "QEMU is not initialized";
+        String contentTitle = getResources().getString(R.string.qemu_not_init);
         StringBuilder contentText = new StringBuilder();
-        contentText.append("Tap to open the application.");
+        contentText.append(getResources().getString(R.string.tap_to_open_app));
 
         if (mTerminalSession != null) {
-            contentTitle = "QEMU is running";
+            contentTitle = getResources().getString(R.string.qemu_running);
         }
 
         final boolean wakeLockHeld = mWakeLock != null;
 
         if (wakeLockHeld) {
-            contentText.append(" Wake lock held.");
+            contentText.append(getResources().getString(R.string.wake_lock_held));
         }
 
         /*if (mTerminalSession != null) {
