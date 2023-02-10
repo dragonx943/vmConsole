@@ -2,7 +2,7 @@
 
 # vmConsole
 ## 下载并安装APK
-  [下载APK](https://github.com/sylirre/vmConsole/releases/download/v1.10.1/vmConsole-v1.10.1-release.apk)
+  [下载APK](https://github.com/zhangazheng/vmConsole/releases/download/v1.10.1/vmConsole-v1.10.1-release.apk)
 ## 初始化
 ### 1.设置docker自动启动
   ```bash
