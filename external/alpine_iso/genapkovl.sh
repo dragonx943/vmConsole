@@ -279,6 +279,8 @@ iface eth0 inet static
     gateway 10.0.2.2
 EOF
 makefile root:root 0644 "$tmp"/etc/resolv.conf <<EOF
+nameserver 223.5.5.5
+nameserver 180.76.76.76
 nameserver 8.8.8.8
 nameserver 10.0.2.3
 EOF
