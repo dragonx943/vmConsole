@@ -63,9 +63,9 @@ cat "${MKIMAGE_SCRIPT_DIR}"/files/motd | makefile root:root 0644 "$tmp"/etc/motd
 mkdir -p "$tmp"/etc/apk
 makefile root:root 0644 "$tmp"/etc/apk/repositories <<EOF
 /media/sr0/apks
-http://dl-cdn.alpinelinux.org/alpine/edge/main
-http://dl-cdn.alpinelinux.org/alpine/edge/community
-#http://dl-cdn.alpinelinux.org/alpine/edge/testing
+http://mirrors.tuna.tsinghua.edu.cn/alpine/edge/main
+http://mirrors.tuna.tsinghua.edu.cn/alpine/edge/community
+#http://mirrors.tuna.tsinghua.edu.cn/alpine/edge/testing
 EOF
 
 ## World file (defines packages installed on ISO boot).
@@ -84,6 +84,7 @@ openssl
 syslinux
 tmux
 vim
+docker
 EOF
 
 ##############################################################################
