@@ -598,7 +598,6 @@ public final class TerminalActivity extends Activity implements ServiceConnectio
 
     @Override
     public boolean onContextItemSelected(MenuItem item) {
-        int httpPort = -1;
         switch (item.getItemId()) {
             case CONTEXTMENU_PASTE_ID:
                 doPaste();
@@ -643,24 +642,66 @@ public final class TerminalActivity extends Activity implements ServiceConnectio
                 }
                 return true;
             case CONTEXTMENU_OPEN_HTTP:
+                int httpPort = -1;
                 if (mTermService != null) {
                     httpPort = mTermService.HTTP_PORT;
                 }
-            case CONTEXTMENU_OPEN_XIAOYA:
-                if (mTermService != null) {
-                    httpPort = mTermService.XIAOYA_PORT;
-                }
-            case CONTEXTMENU_OPEN_ALIST:
-                if (mTermService != null) {
-                    httpPort = mTermService.ALIST_PORT;
-                }
-            case CONTEXTMENU_OPEN_OTHER:
-                if (mTermService != null) {
-                    httpPort = mTermService.OTHER_PORT;
-                }
-
                 if (httpPort != -1) {
                     Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://127.0.0.1:" + httpPort));
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    try {
+                        startActivity(intent);
+                    } catch (Exception e) {
+                        Toast.makeText(this, R.string.toast_open_web_intent_failure, Toast.LENGTH_LONG).show();
+                        Log.e(Config.APP_LOG_TAG, "failed to start intent", e);
+                    }
+                } else {
+                    Toast.makeText(this, R.string.toast_port_fwd_failed, Toast.LENGTH_LONG).show();
+                }
+                return true;
+            case CONTEXTMENU_OPEN_XIAOYA:
+                int xiaoyaPort = -1;
+                if (mTermService != null) {
+                    xiaoyaPort = mTermService.XIAOYA_PORT;
+                }
+                if (xiaoyaPort != -1) {
+                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://127.0.0.1:" + xiaoyaPort));
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    try {
+                        startActivity(intent);
+                    } catch (Exception e) {
+                        Toast.makeText(this, R.string.toast_open_web_intent_failure, Toast.LENGTH_LONG).show();
+                        Log.e(Config.APP_LOG_TAG, "failed to start intent", e);
+                    }
+                } else {
+                    Toast.makeText(this, R.string.toast_port_fwd_failed, Toast.LENGTH_LONG).show();
+                }
+                return true;
+            case CONTEXTMENU_OPEN_ALIST:
+                int alistPort = -1;
+                if (mTermService != null) {
+                    alistPort = mTermService.ALIST_PORT;
+                }
+                if (alistPort != -1) {
+                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://127.0.0.1:" + alistPort));
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    try {
+                        startActivity(intent);
+                    } catch (Exception e) {
+                        Toast.makeText(this, R.string.toast_open_web_intent_failure, Toast.LENGTH_LONG).show();
+                        Log.e(Config.APP_LOG_TAG, "failed to start intent", e);
+                    }
+                } else {
+                    Toast.makeText(this, R.string.toast_port_fwd_failed, Toast.LENGTH_LONG).show();
+                }
+                return true;
+            case CONTEXTMENU_OPEN_OTHER:
+                int otherPort = -1;
+                if (mTermService != null) {
+                    otherPort = mTermService.OTHER_PORT;
+                }
+                if (otherPort != -1) {
+                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://127.0.0.1:" + otherPort));
                     intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     try {
                         startActivity(intent);
