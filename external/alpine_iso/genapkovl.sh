@@ -82,6 +82,7 @@ nano-syntax
 openssh-client
 openssl
 syslinux
+vim
 EOF
 
 ##############################################################################
