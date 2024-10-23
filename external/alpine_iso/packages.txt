@@ -233,8 +233,6 @@ sudo
 sudo-doc
 syslinux
 syslinux-doc
-tmux
-tmux-doc
 tzdata
 tzdata-doc
 tzdata-utils
@@ -256,4 +254,3 @@ xz-libs
 zlib
 zlib-doc
 zstd-libs
-docker
