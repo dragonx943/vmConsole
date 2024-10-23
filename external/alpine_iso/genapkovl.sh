@@ -82,9 +82,6 @@ nano-syntax
 openssh-client
 openssl
 syslinux
-tmux
-vim
-docker
 EOF
 
 ##############################################################################
