@@ -63,9 +63,9 @@ cat "${MKIMAGE_SCRIPT_DIR}"/files/motd | makefile root:root 0644 "$tmp"/etc/motd
 mkdir -p "$tmp"/etc/apk
 makefile root:root 0644 "$tmp"/etc/apk/repositories <<EOF
 /media/sr0/apks
-http://mirrors.tuna.tsinghua.edu.cn/alpine/edge/main
-http://mirrors.tuna.tsinghua.edu.cn/alpine/edge/community
-#http://mirrors.tuna.tsinghua.edu.cn/alpine/edge/testing
+http://dl-cdn.alpinelinux.org/alpine/edge/main
+http://dl-cdn.alpinelinux.org/alpine/edge/community
+http://dl-cdn.alpinelinux.org/alpine/edge/testing
 EOF
 
 ## World file (defines packages installed on ISO boot).
@@ -279,10 +279,8 @@ iface eth0 inet static
     gateway 10.0.2.2
 EOF
 makefile root:root 0644 "$tmp"/etc/resolv.conf <<EOF
-nameserver 223.5.5.5
-nameserver 180.76.76.76
 nameserver 8.8.8.8
-nameserver 10.0.2.3
+nameserver 8.8.4.4
 EOF
 
 ##############################################################################
