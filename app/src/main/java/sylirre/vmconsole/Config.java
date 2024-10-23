@@ -44,30 +44,30 @@ public class Config {
     /**
      * Upstream name server used by QEMU DNS resolver (IPv4).
      */
-    public static final String QEMU_UPSTREAM_DNS_V4 = "1.1.1.1";
+    public static final String QEMU_UPSTREAM_DNS_V4 = "8.8.8.8";
 
     /**
      * Upstream name server used by QEMU DNS resolver (IPv6).
      */
-    public static final String QEMU_UPSTREAM_DNS_V6 = "2606:4700:4700::1111";
+    public static final String QEMU_UPSTREAM_DNS_V6 = "2001:4860:4860::8888";
 
     /**
      * Minimal RAM allocation in MiB which guarantees that guest OS will
      * boot and work properly.
      */
-    public static final int QEMU_MIN_SAFE_RAM = 256;
+    public static final int QEMU_MIN_SAFE_RAM = 1024;
 
     /**
      * Max RAM allocation in MiB which is considered to be safe.
      */
-    public static final int QEMU_MAX_SAFE_RAM = 2047;
+    public static final int QEMU_MAX_SAFE_RAM = 2048;
 
     /**
      * Minimal size of TCG buffer in MiB that would not cause too many
      * flushes of generated code cache and significant performance
      * degradation.
      */
-    public static final int QEMU_MIN_TCG_BUF = 64;
+    public static final int QEMU_MIN_TCG_BUF = 256;
 
     /**
      * Maximal size in MiB of TCG buffer to prevent wasting of device
