@@ -6,6 +6,7 @@ ARG RSA_KEY_PASSPHRASE pass
 COPY /abuild-keys /abuild-keys
 COPY /extras /custom-packages/extras
 
+RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
 RUN apk upgrade
 RUN apk add alpine-sdk build-base apk-tools alpine-conf openssl && \
     apk add busybox fakeroot syslinux xorriso squashfs-tools sudo && \
