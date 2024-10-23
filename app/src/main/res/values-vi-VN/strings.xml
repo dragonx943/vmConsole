@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="application_name">vmConsole</string>
+
+    <!-- Common -->
+    <string name="cancel_label">Hủy bỏ</string>
+    <string name="exit_label">Thoát</string>
+    <string name="ok_label">OK</string>
+
+    <!-- Installer dialog -->
+    <string name="installer_progress_message">Đang khởi tạo…</string>
+    <string name="installer_error_title">Khởi tạo thất bại!</string>
+    <string name="installer_error_body">Ứng dụng không thể thiết lập tài nguyên khởi chạy!</string>
+    <string name="installer_error_try_again_button">Thử lại</string>
+
+    <!-- Context menu: main -->
+    <string name="menu_copy_text">Sao chép</string>
+    <string name="menu_paste_text">Dán</string>
+    <string name="menu_more">Nhiều hơn…</string>
+
+    <!-- Context menu: more -->
+    <string name="menu_open_ssh">Mở SSH (%s)</string>
+    <string name="menu_open_http">Mở HTTP (%s)</string>
+    <string name="menu_open_xiaoya">Mở XIAOYA (%s)</string>
+    <string name="menu_open_alist">Mở ALIST (%s)</string>
+    <string name="menu_open_other">Mở OTHER (%s)</string>
+    <string name="menu_open_https">Mở HTTPS (%s)</string>
+    <string name="menu_open_fm">Mở quản lí File</string>
+    <string name="menu_autofill_pw">Tự động điền...</string>
+    <string name="menu_select_urls">Chọn URLs</string>
+    <string name="menu_reset_terminal">Khởi động lại</string>
+    <string name="menu_shutdown">Tắt máy ảo</string>
+    <string name="menu_toggle_ignore_bell">Bỏ qua rung</string>
+    <string name="menu_toggle_scrolling">Tắt tự động cuộn</string>
+
+    <!-- Context menu: Open File Manager -->
+    <string name="toast_open_fm_intent_failure">Không thể khởi chạy File Manager!</string>
+
+    <!-- Context menu: Open SSH -->
+    <string name="dialog_set_ssh_user_title">Kết nối với vai trò user:</string>
+    <string name="dialog_set_ssh_user_invalid_name">Không thể dùng SSH với username đã cung cấp!</string>
+    <string name="toast_open_ssh_intent_failure">Không thể chạy ứng dụng SSH client!</string>
+
+    <!-- Context menu: Open Web -->
+    <string name="toast_open_web_intent_failure">Không thể mở trình duyệt Web!</string>
+
+    <!-- Select URL dialog -->
+    <string name="toast_no_urls_found">Không có URLs nào cả!</string>
+    <string name="toast_url_copied">URL đã được sao chép vào bộ nhớ tạm thời!</string>
+    <string name="toast_bad_url">Không thể mở URL này!</string>
+    <string name="select_url_dialog_title">Ấn vào URL để sao chép hoặc giữ để mở:</string>
+
+    <!-- Shut down dialog -->
+    <string name="dialog_shut_down_title">Tắt máy ảo?</string>
+    <string name="dialog_shut_down_desc">Mọi dữ liệu sẽ bị mất nếu bạn không lưu, có muốn tiếp tục?</string>
+    <string name="dialog_shut_down_yes_btn">Có</string>
+
+    <!-- Notification -->
+    <string name="notification_action_wake_lock">Treo máy ảo</string>
+    <string name="notification_action_wake_unlock">Hủy treo máy ảo</string>
+    <string name="notification_action_shutdown">Tắt máy ảo</string>
+
+    <!-- Misc -->
+    <string name="toast_reset_terminal">Trạng thái Terminal đã được đặt lại.</string>
+    <string name="toast_bell_char_ignored">Rung sẽ được bỏ qua.</string>
+    <string name="toast_bell_char_processed">Rung sẽ được xử lí và bật.</string>
+    <string name="toast_terminal_scrolling_disabled">Đã tắt tự động cuộn Terminal</string>
+    <string name="toast_terminal_scrolling_enabled">Đã bật tự động cuộn Terminal</string>
+    <string name="toast_port_fwd_failed">Không thể dùng tính năng này vì đã xảy ra lỗi khi port forwarding.</string>
+    <string name="qemu_running">Máy ảo QEMU đang chạy</string>
+    <string name="qemu_not_init">Máy ảo QEMU chưa được khởi tạo</string>
+    <string name="tap_to_open_app">Tap to open the application.</string>
+    <string name="wake_lock_held">Wake lock held.</string>
+</resources>
